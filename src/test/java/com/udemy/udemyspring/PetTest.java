@@ -5,16 +5,16 @@ import com.udemy.udemyspring.spring_introduction.Dog;
 import com.udemy.udemyspring.spring_introduction.Pet;
 import org.junit.jupiter.api.Test;
 
-class PetTest {
+public class PetTest {
 
     @Test
-    void sayDog() {
+    public void sayDog() {
         Pet pet = new Dog();
         pet.say();
     }
 
     @Test
-    void sayCat() {
+    public void sayCat() {
         Pet pet = new Cat();
         pet.say();
     }
