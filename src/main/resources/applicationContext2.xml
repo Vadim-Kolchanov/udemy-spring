@@ -10,12 +10,15 @@
 
     <bean id="myDog"
           class="com.udemy.udemyspring.spring_introduction.Dog"
-          scope="singleton">
+          init-method="init"
+          destroy-method="destroy">
     </bean>
 
     <bean id="myCat"
           class="com.udemy.udemyspring.spring_introduction.Cat"
-          scope="prototype">
+          scope="prototype"
+          init-method="init"
+          destroy-method="destroy">
     </bean>
 
 </beans>
