@@ -1,5 +1,9 @@
 package com.udemy.udemyspring.spring_introduction;
 
+import org.springframework.stereotype.Component;
+
+// id dog
+@Component
 public class Dog implements Pet {
 
     public Dog() {
