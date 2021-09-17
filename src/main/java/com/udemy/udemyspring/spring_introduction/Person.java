@@ -6,7 +6,10 @@ import org.springframework.stereotype.Component;
 @Component("personBean")
 public class Person {
 
+    // Работает внедрение через рефлексию джавы
+    @Autowired
     private Pet pet;
+
     private String surname;
     private int age;
 
@@ -25,17 +28,17 @@ public class Person {
     // Как спринг понимает что это сеттер
     // pet -> Pet -> setPet
 //    @Autowired
-//    public void setPet(Pet pet) {
-//        System.out.println("Class person: set pet");
-//        this.pet = pet;
-//    }
-
-    // Для внедрения зависимостей название может быть любым
-    @Autowired
-    public void anyMethodName(Pet pet) {
-        System.out.println("Class person: anyMethodName");
+    public void setPet(Pet pet) {
+        System.out.println("Class person: set pet");
         this.pet = pet;
     }
+
+//    // Для внедрения зависимостей название может быть любым
+//    @Autowired
+//    public void anyMethodName(Pet pet) {
+//        System.out.println("Class person: anyMethodName");
+//        this.pet = pet;
+//    }
 
     public int getAge() {
         return age;
