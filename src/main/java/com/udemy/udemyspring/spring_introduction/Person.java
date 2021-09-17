@@ -12,15 +12,28 @@ public class Person {
 
     // С версией 4.4 если есть один конструктор, то спринг сам внедряет зависимости
 //    @Autowired
-    public Person(Pet pet) {
+//    public Person(Pet pet) {
+//        System.out.println("Person bean is created");
+//        this.pet = pet;
+//    }
+
+    public Person() {
         System.out.println("Person bean is created");
-        this.pet = pet;
+        System.out.println("Default constructor");
     }
 
     // Как спринг понимает что это сеттер
     // pet -> Pet -> setPet
-    public void setPet(Pet pet) {
-        System.out.println("Class person: set pet");
+//    @Autowired
+//    public void setPet(Pet pet) {
+//        System.out.println("Class person: set pet");
+//        this.pet = pet;
+//    }
+
+    // Для внедрения зависимостей название может быть любым
+    @Autowired
+    public void anyMethodName(Pet pet) {
+        System.out.println("Class person: anyMethodName");
         this.pet = pet;
     }
 
