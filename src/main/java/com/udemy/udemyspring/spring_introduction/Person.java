@@ -2,6 +2,7 @@ package com.udemy.udemyspring.spring_introduction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
@@ -12,7 +13,11 @@ public class Person {
 //    @Qualifier("catBean")
     private Pet pet;
 
+    //@Value("Kolchanov")
+    @Value("${person.surname}")
     private String surname;
+    //@Value("23")
+    @Value("${person.age}")
     private int age;
 
     // С версией 4.4 если есть один конструктор, то спринг сам внедряет зависимости

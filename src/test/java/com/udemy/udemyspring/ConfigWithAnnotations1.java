@@ -30,4 +30,24 @@ public class ConfigWithAnnotations1 {
 
         context.close();
     }
+
+    /**
+     * @Value("Hardcode") - лучше использовать properties files
+     *
+     * @Value("${person.age}") - лучший вариант
+     */
+    @Test
+    public void testValue() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext3.xml"
+        );
+
+        Person person = context.getBean("personBean", Person.class);
+        person.callYourPet();
+
+        System.out.println(person.getSurname());
+        System.out.println(person.getAge());
+
+        context.close();
+    }
 }
