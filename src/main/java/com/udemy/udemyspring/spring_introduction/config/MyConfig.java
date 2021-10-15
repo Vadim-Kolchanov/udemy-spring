@@ -3,13 +3,11 @@ package com.udemy.udemyspring.spring_introduction.config;
 import com.udemy.udemyspring.spring_introduction.Cat;
 import com.udemy.udemyspring.spring_introduction.Person;
 import com.udemy.udemyspring.spring_introduction.Pet;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 @Configuration
 //@ComponentScan("com.udemy.udemyspring.spring_introduction")
+@PropertySource("classpath:myApp.properties")
 public class MyConfig {
 
     // beanId = catBean (имя метода)

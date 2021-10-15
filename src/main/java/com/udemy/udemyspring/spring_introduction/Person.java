@@ -14,10 +14,10 @@ public class Person {
     private Pet pet;
 
     //@Value("Kolchanov")
-    //@Value("${person.surname}")
+    @Value("${person.surname}")
     private String surname;
     //@Value("23")
-    //@Value("${person.age}")
+    @Value("${person.age}")
     private int age;
 
     // С версией 4.4 если есть один конструктор, то спринг сам внедряет зависимости
