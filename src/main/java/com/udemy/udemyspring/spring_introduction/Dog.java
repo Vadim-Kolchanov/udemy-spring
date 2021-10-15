@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 // id dog
-@Component
+//@Component
 public class Dog implements Pet {
 
     public Dog() {

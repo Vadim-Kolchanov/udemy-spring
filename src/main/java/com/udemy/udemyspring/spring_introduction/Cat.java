@@ -8,8 +8,8 @@ import javax.annotation.PreDestroy;
 
 // default id for SQLTest -> "SQLTest"
 // default id = "cat"
-@Component("catBean")
-@Scope("prototype")
+//@Component("catBean")
+//@Scope("prototype")
 public class Cat implements Pet {
 
     @PostConstruct

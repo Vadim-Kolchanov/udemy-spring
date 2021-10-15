@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("personBean")
+//@Component("personBean")
 public class Person {
 
     // Работает внедрение через рефлексию джавы
@@ -21,8 +21,13 @@ public class Person {
     private int age;
 
     // С версией 4.4 если есть один конструктор, то спринг сам внедряет зависимости
-    @Autowired
+  /*  @Autowired
     public Person(@Qualifier("catBean") Pet pet) {
+        System.out.println("Person bean is created");
+        this.pet = pet;
+    }*/
+
+    public Person(Pet pet) {
         System.out.println("Person bean is created");
         this.pet = pet;
     }
