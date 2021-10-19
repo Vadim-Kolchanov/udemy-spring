@@ -1,4 +1,4 @@
-package com.udemy.udemyspring;
+package com.udemy.udemyspring.spring_introduction;
 
 import com.udemy.udemyspring.spring_introduction.Cat;
 import com.udemy.udemyspring.spring_introduction.Person;

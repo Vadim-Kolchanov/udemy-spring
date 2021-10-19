@@ -1,43 +1,39 @@
-package com.udemy.udemyspring;
+package com.udemy.udemyspring.spring_introduction;
 
 import com.udemy.udemyspring.spring_introduction.Cat;
 import com.udemy.udemyspring.spring_introduction.Dog;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-
-public class Test4 {
+public class Test5 {
 
     @Test
-    public void testSingleton() {
-        // Можно перечислять сколь угодно много xml файлов через запятую
+    public void initAndDestroyMethodForSingleton() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext2.xml"
         );
 
-        Dog myDog = context.getBean("myDog", Dog.class);
-        Dog yourDog = context.getBean("myDog", Dog.class);
+        Dog dog = context.getBean("myDog", Dog.class);
+        dog.say();
 
-        assertThat(myDog, is(yourDog));
+        Dog yourDog = context.getBean("myDog", Dog.class);
+        yourDog.say();
 
         context.close();
     }
 
+    /**
+     * Destroy метод для прототипа не выполнится
+     */
     @Test
-    public void testPrototype() {
+    public void initAndDestroyMethodForPrototype() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext2.xml"
         );
 
         Cat myCat = context.getBean("myCat", Cat.class);
-        Cat yourCat = context.getBean("myCat", Cat.class);
-
-        assertThat(myCat, is(not(yourCat)));
+        myCat.say();
 
         context.close();
     }
-
 }

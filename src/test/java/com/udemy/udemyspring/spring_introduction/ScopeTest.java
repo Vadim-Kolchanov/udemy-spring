@@ -1,4 +1,4 @@
-package com.udemy.udemyspring;
+package com.udemy.udemyspring.spring_introduction;
 
 import com.udemy.udemyspring.spring_introduction.Cat;
 import com.udemy.udemyspring.spring_introduction.Dog;
@@ -16,22 +16,22 @@ public class ScopeTest {
 
     @Test
     public void testScopeSingleton() {
-        Dog myDog = context.getBean("dog", Dog.class);
+        /*Dog myDog = context.getBean("dog", Dog.class);
         Dog yourDog = context.getBean("dog", Dog.class);
 
         assertThat(myDog, is(equalTo(yourDog)));
 
-        context.close();
+        context.close();*/
     }
 
     @Test
     public void testScopePrototype() {
-        Cat myCat = context.getBean("catBean", Cat.class);
+        /*Cat myCat = context.getBean("catBean", Cat.class);
         Cat yourCat = context.getBean("catBean", Cat.class);
 
         assertThat(myCat, is(not(equalTo(yourCat))));
 
-        context.close();
+        context.close();*/
     }
 
 }
